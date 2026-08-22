@@ -1,0 +1,71 @@
+# Python bytecode and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg-info/
+.Python
+.venv/
+venv/
+env/
+ENV/
+.dnbc-env/
+tools/.dnbc-env/
+
+# Python tooling caches and reports
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+coverage/
+htmlcov/
+test-results/
+test-coverage/
+playwright-report/
+
+# Desktop/build artifacts that are not part of this source-only branch
+node_modules/
+dist/
+build/
+target/
+src-tauri/target/
+src-tauri/resources/
+wheelhouse/
+wheels/
+.vite/
+
+# Local datasets, downloaded models, analysis output, and caches
+data/
+test-data/
+outputs/
+results/
+models/
+.dnbcscope_cache/
+*.h5ad
+*.h5
+*.loom
+*.mtx
+*.mtx.gz
+*.npz
+*.npy
+*.rds
+*.bam
+*.bai
+tools/sctype_db.json
+tools/celltypist_models.json
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and operating-system/editor files
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
