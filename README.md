@@ -22,18 +22,10 @@ differential expression, and figure export. **All data stays on your machine.**
 
 Prebuilt installers are provided — **no compilation needed**.
 
-### Where files live
+- macOS: [DNBCScope_0.1.0_aarch64.dmg](https://github.com/DNBelabCSeries/DNBCScope/releases/download/0.1.0/DNBCScope_0.1.0_aarch64.dmg)
+- Windows: [DNBCScope_0.1.0_x64-setup.exe](https://github.com/DNBelabCSeries/DNBCScope/releases/download/0.1.0/DNBCScope_0.1.0_x64-setup.exe)
 
-| Item | Location |
-| --- | --- |
-| App | Installed like any desktop app (launcher: `DNBCScope`). |
-| Project data | The folder you pick when creating/opening a project (metadata, cache, exports live there). |
-| Recent list | Stored in the app's per-user local storage, not inside any project. |
-| Analysis cache | Inside each project folder; safe to delete to reclaim space (raw input untouched). |
-| Exports | Written to wherever you choose in the export dialog. |
-
-If a project will not open, first check that its folder still exists at the path
-shown in the recent-projects list and that you have read/write access to it.
+All installers are distributed via the [Releases](https://github.com/DNBelabCSeries/DNBCScope/releases) page. See *About the unsigned builds* below for launch steps.
 
 ## About the unsigned builds
 
@@ -51,6 +43,18 @@ publisher identity is not verified by the OS vendor.
 **Windows (SmartScreen)**
 : warning: *“Windows protected your PC.”*
 : fix: Click **More info → Run anyway**.
+
+### 关于未签名安装包（中文）
+
+安装包**未经代码签名**——这是本测试版（beta）的预期情况，因为我们尚未申请代码签名（计划在后续稳定版中提供）。下面的警告**并不代表应用不安全**，它们只是表示操作系统厂商尚未验证发布者身份。
+
+**macOS（Gatekeeper）**
+: 警告：*“…无法打开，因为无法验证开发者。”*
+: 解决方法：打开 **系统设置 → 隐私与安全性**，然后点击 **仍要打开**。该选项仅在被拦截后约 1 小时内出现；若已消失，再次打开应用即可重新触发弹窗。
+
+**Windows（SmartScreen）**
+: 警告：*“Windows 已保护你的电脑。”*
+: 解决方法：点击 **更多信息 → 仍要运行**。
 
 ## Privacy
 
