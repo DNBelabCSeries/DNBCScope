@@ -1,67 +1,91 @@
-# DNBCScope
+<div align="center">
+  <img src="assets/app-icon.svg" alt="DNBCScope icon" width="112" height="112">
+  <h1>DNBCScope Desktop</h1>
+  <p><strong>本地运行的单细胞数据分析桌面软件</strong><br>
+  Explore, analyze, and export single-cell data in one focused workspace.</p>
+  <p>
+    <a href="https://github.com/DNBelabCSeries/DNBCScope/releases"><img src="https://img.shields.io/badge/Download-Desktop%20installers-0f766e?style=for-the-badge" alt="Download desktop installers"></a>
+    <a href="https://github.com/DNBelabCSeries/DNBCScope/blob/opensource/LICENSE"><img src="https://img.shields.io/badge/License-MIT-334155?style=for-the-badge" alt="MIT license"></a>
+    <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Windows-475569?style=for-the-badge" alt="macOS and Windows">
+    <img src="https://img.shields.io/badge/Status-Beta-f59e0b?style=for-the-badge" alt="Beta">
+  </p>
+</div>
 
-> **Beta test build** — feedback and testing are welcome.
 
-Local single-cell RNA-seq analysis desktop app for QC, clustering, annotation,
-differential expression, and figure export. **All data stays on your machine.**
 
----
+DNBCScope is a cross-platform desktop application for exploring and analyzing
+single-cell expression data. It brings quality control, dimensional reduction,
+clustering, annotation, differential expression, V(D)J exploration, and figure
+export into one local workspace. The application is designed for large projects:
+interactive plots use WebGL and analysis data stays on the computer running the app.
 
-## Features
+> **Beta preview** — feedback, reproducible examples, and bug reports are welcome.
 
-- Create single-sample or multi-sample projects from Matrix Market data.
-- Import processed `.h5ad` embeddings, metadata, categories, and expression sources.
-- Run QC, Scrublet doublet detection, normalization, HVG, PCA, neighbors, Leiden, UMAP/t-SNE, and Harmony integration.
-- Explore large cell counts with WebGL rendering and lazy binary loading.
-- Select cells manually or by reusable category, expression, and QC rules.
-- Annotate clusters with scType or bundled/downloadable CellTypist models.
-- Run cell-level differential expression and multi-sample pseudobulk comparisons.
-- Export project data, tables, and PNG/SVG figures.
+## What the desktop app does
 
-## Getting started
+- **Analysis pipeline:** normalization, HVG, PCA, neighbors, **Leiden** clustering, UMAP/t-SNE, and optional **Harmony** integration for multi-sample projects.
+- **Annotation:** cell-type labeling with **scType** or **CellTypist** models, compared alongside clusters and sample metadata.
+- **Interactive exploration:** zoomable **WebGL** embeddings, gene-expression coloring, manual/reusable selection, and differential expression with multi-sample pseudobulk.
+- **V(D)J & export:** inspect receptor metadata when present, and export tables plus publication-ready PNG/SVG figures.
 
-Prebuilt installers are provided — **no compilation needed**.
+## Screenshots
 
-- macOS: [DNBCScope_0.1.0_aarch64.dmg](https://github.com/DNBelabCSeries/DNBCScope/releases/download/0.1.0/DNBCScope_0.1.0_aarch64.dmg)
-- Windows: [DNBCScope_0.1.0_x64-setup.exe](https://github.com/DNBelabCSeries/DNBCScope/releases/download/0.1.0/DNBCScope_0.1.0_x64-setup.exe)
+The images below are screenshots from the DNBCScope desktop application using
+the bundled example workflow. They are included to show the actual product UI,
+not generic plotting examples.
 
-All installers are distributed via the [Releases](https://github.com/DNBelabCSeries/DNBCScope/releases) page. See *About the unsigned builds* below for launch steps.
+<p align="center">
+  <img src="./screenshot.png" alt="DNBCScope home workspace" width="50%">
+</p>
 
-## About the unsigned builds
+## Download
 
-The installers are **not code-signed** — expected for this beta test release, as
-we have not yet applied for code signing (planned for a later stable release).
-The warnings below do **not** mean the app is unsafe; they only mean the
-publisher identity is not verified by the OS vendor.
+Prebuilt installers are available from the [Releases](https://github.com/DNBelabCSeries/DNBCScope/releases) page — no compiler or Python setup is required for normal desktop use.
 
-**macOS (Gatekeeper)**
-: warning: *“…cannot be opened because the developer cannot be verified.”*
-: fix: Open **System Settings → Privacy & Security**, then click **Open Anyway**.
-  This option appears only within ~1 hour of the block; if it is gone,
-  re-trigger the popup by opening the app again.
+| Platform | Package | Notes |
+| --- | --- | --- |
+| macOS Apple silicon | [DNBCScope 0.1.0](https://github.com/DNBelabCSeries/DNBCScope/releases/download/0.1.0/DNBCScope_0.1.0_aarch64.dmg) | macOS 11 or newer |
+| Windows x64 | [DNBCScope 0.1.0](https://github.com/DNBelabCSeries/DNBCScope/releases/download/0.1.0/DNBCScope_0.1.0_x64-setup.exe) | Current-user installation |
 
-**Windows (SmartScreen)**
-: warning: *“Windows protected your PC.”*
-: fix: Click **More info → Run anyway**.
+The release page is the source of truth for the latest installers and release
+notes. If a direct link above changes, open the release page and choose the
+matching package for your computer.
 
-### 关于未签名安装包（中文）
+### First launch on an unsigned beta build
 
-安装包**未经代码签名**——这是本测试版（beta）的预期情况，因为我们尚未申请代码签名（计划在后续稳定版中提供）。下面的警告**并不代表应用不安全**，它们只是表示操作系统厂商尚未验证发布者身份。
+The beta installers are not code-signed yet. This can trigger an operating-system
+publisher warning even though it does not indicate a data-analysis error.
 
-**macOS（Gatekeeper）**
-: 警告：*“…无法打开，因为无法验证开发者。”*
-: 解决方法：打开 **系统设置 → 隐私与安全性**，然后点击 **仍要打开**。该选项仅在被拦截后约 1 小时内出现；若已消失，再次打开应用即可重新触发弹窗。
+- **macOS:** open **System Settings → Privacy & Security**, then choose **Open Anyway**.
+  （macOS：打开**系统设置 → 隐私与安全性**，然后点**仍要打开**。）
+- **Windows:** choose **More info → Run anyway** in SmartScreen.
+  （Windows：在 SmartScreen 中点击**更多信息 → 仍要运行**。）
 
-**Windows（SmartScreen）**
-: 警告：*“Windows 已保护你的电脑。”*
-: 解决方法：点击 **更多信息 → 仍要运行**。
+## Data and privacy
 
-## Privacy
+Core analysis runs locally. Project files, caches, and exports remain on the
+locations selected on your computer; the app does not require an account or send
+project data to a remote service. Downloading an optional annotation model is the
+only workflow that may need network access.
 
-All analysis runs locally on your computer. DNBCScope does not require an account
-or network access to function, and no project data leaves your machine.
+## This branch
 
-## Help
+The `opensource` branch publishes the selected Python analysis and conversion
+tools used by DNBCScope. The complete desktop shell, bundled runtime, models, and
+release packaging are distributed through the installers in **Releases** rather
+than as a full source checkout in this branch.
 
-The full workflow, plotting, and export options are documented in the app's
-built-in manual — open **Help** from the app menu.
+The tools are useful for inspection, reproducibility, and integration work. Their
+command-line usage is documented at the top of each file in [`tools/`](tools/).
+
+## Feedback and support
+
+- Report a reproducible issue through [GitHub Issues](https://github.com/DNBelabCSeries/DNBCScope/issues).
+- Include the operating system, app version, input format, and the exported
+  diagnostic log when reporting a failure. Do not upload raw expression data or
+  personally identifiable metadata.
+- For workflow details, use the in-app **Help** manual after installing the app.
+
+## License
+
+DNBCScope's published tools are available under the [MIT License](LICENSE).

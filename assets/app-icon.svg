@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">DNBCScope</title>
+  <desc id="desc">A dark teal rounded square with a green open C and cell dots.</desc>
+  <defs>
+    <linearGradient id="tile" x1="232" y1="178" x2="790" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#092734"/>
+      <stop offset=".52" stop-color="#031821"/>
+      <stop offset="1" stop-color="#082733"/>
+    </linearGradient>
+    <linearGradient id="cell" x1="340" y1="288" x2="690" y2="742" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#83F5A9"/>
+      <stop offset=".48" stop-color="#35DE91"/>
+      <stop offset="1" stop-color="#00B978"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0" cy="0" r="1" gradientTransform="translate(360 264) rotate(54) scale(542)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#185466" stop-opacity=".48"/>
+      <stop offset=".65" stop-color="#061B24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="96" y="96" width="832" height="832" rx="194" fill="url(#tile)"/>
+  <rect x="98" y="98" width="828" height="828" rx="192" fill="url(#shine)"/>
+  <rect x="100" y="100" width="824" height="824" rx="190" fill="none" stroke="#2A5967" stroke-opacity=".3" stroke-width="8"/>
+  <g transform="translate(18 0)">
+    <path d="M680 344 A238 238 0 1 0 680 680" fill="none" stroke="url(#cell)" stroke-width="108" stroke-linecap="round"/>
+    <g fill="url(#cell)">
+      <circle cx="465" cy="520" r="64"/>
+      <circle cx="590" cy="438" r="45"/>
+      <circle cx="566" cy="612" r="30"/>
+    </g>
+  </g>
+</svg>
