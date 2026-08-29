@@ -35,7 +35,7 @@ the bundled example workflow. They are included to show the actual product UI,
 not generic plotting examples.
 
 <p align="center">
-  <img src="./screenshot.png" alt="DNBCScope home workspace" width="50%">
+  <img src="./screenshot.png" alt="DNBCScope home workspace" width="80%">
 </p>
 
 ## Download
